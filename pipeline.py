@@ -16,5 +16,6 @@ def fetch_weather():
 weather = fetch_weather()
 df = pd.DataFrame([weather])
 os.makedirs("data", exist_ok=True)
+path = "data/weather.csv"
 df.to_csv(path, mode='a', header=not os.path.exists(path), index=False)
 print(f"SAVED: {weather}")
